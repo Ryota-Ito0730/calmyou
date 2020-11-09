@@ -1,0 +1,39 @@
+/* ローディングアニメーションここから */
+#loading {
+  display: table;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f3f3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  opacity: 1;
+}
+
+@keyframes pl_loading {
+  0% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+#loading.loaded { 
+  animation: pl_loading 5s ease-in-out forwards;
+}
+
+#loading h1 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* ローディングアニメーションここまで */

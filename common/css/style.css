@@ -60,8 +60,34 @@ li
 
 button
 {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   outline: none;
+  padding: 0;
+  appearance: none;
 }
+
+
+/* ローディングアニメーションここから */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #0bd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+/* ローディングアニメーションここまで */
+
+
 
 .inner
 {
@@ -175,14 +201,6 @@ button#top_reverse.on
   margin-left: auto;
   margin-right: auto;
 }
-
-/* safari */
-/* @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    _::-webkit-full-page-media, _:future, :root #top_reverse img {
-        margin-left: auto;
-        margin-right: auto;
-    }
-} */
 
 #top_reverse span
 {

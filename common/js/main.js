@@ -1,14 +1,24 @@
+// =========================
+// トップページ内の処理を記述
+// =========================
 $(function () {
+  // cookie操作
+  //main.js:7 PHPSESSID=h6cmv7nnc2o3rq7trpulhm1nar
+  let cookie = document.cookie;
+  console.log(cookie);
+
+
+
   // =================================
-  // アドレスバーの高さを除いた高さを取得
+  // アドレスバーの高さを除いた値を取得
   // =================================
   let except_address_bar = $('header, .hkv_filter, #sp_menu, .sp_kv_filter');
   let current_wh = $(window).height();
   except_address_bar.css({ 'height': current_wh, 'transition': '.4s' });
 
-  // =============================
-  // remove and add classes.
-  // =============================
+  // ===============================
+  // 横幅に応じてクラスの付け外しを実行
+  // ===============================
   let first_ww = $(window).width();
   let sec_themes = $('section#themes');
   let some_el = $('#sp_menu li a, footer li a');
@@ -61,7 +71,7 @@ $(function () {
   });
 
   // =========================
-  // random key visual
+  // ランダムキービジュアル機能
   // =========================
   let min = 1;
   let max = 3;
@@ -71,9 +81,9 @@ $(function () {
     'background-image': `URL("common/img/key_visual/top_key${top_num}.jpg")`
   });
 
-  // =========================
-  // displayed mobile menu
-  // =========================
+  // ===================================
+  // トップページ中のMENUボタン押下時の処理
+  // ===================================
   let top_menu_btn = $('#top_menu');
   let left_line = $('.left_line');
   let right_line = $('.right_line');
@@ -88,17 +98,17 @@ $(function () {
     }
   });
 
-  // =========================
-  // Scrolled to Top 
-  // =========================
+  // =====================================
+  // トップページ中のトップへ戻る押下時の処理
+  // =====================================
   $('#top_reverse').on('click', function () {
     $('body,html').animate({ scrollTop: 0 }, 500);
     except_address_bar.css({ 'height': '100vh', 'transition': '.4s' });
   });
 
-  // ==============================
-  // fluffy displayed main elements
-  // ==============================
+  // ================================
+  // スクロール量に応じた要素の表示処理
+  // ================================
   $(window).on("scroll", function () {
     let scroll = $(this).scrollTop();
     let wh = $(this).height();
@@ -109,4 +119,5 @@ $(function () {
       }
     });
   });
+
 });//////////////////////

@@ -1,10 +1,11 @@
+// ============================================================
+// コントロールメニューのテーマセレクトUIの挙動は本ファイルに記述する
+// ============================================================
 $(function () {
-
   // ↓ブラウザ読込時に表示される要素の個数番目とあわせる
   let theme_num = 1;
   // ↓ブラウザ読込時の初期値↓(クリックと同時に表示を消す)
   $('ul.pltheme_wrapp > li:nth-child(1)').addClass('visible');
-  // $(`ul.pltheme_wrapp > li:nth-child(${theme_num})`).addClass('on');
   $(`ul.pltheme_wrapp > li:not(:nth-child(1))`).addClass('hidden');
   // 初期値はdwボタンは非表示
   if (theme_num == 1) {
@@ -23,12 +24,6 @@ $(function () {
 
       $(`ul.pltheme_wrapp > li:not(:nth-child(${theme_num}))`).removeClass('visible');
       $(`ul.pltheme_wrapp > li:not(:nth-child(${theme_num}))`).addClass('hidden');
-      // ボタン表示非表示
-
-      // 読み込み直後のスタイルは削除する
-      // $('ul.pltheme_wrapp > li:nth-child(1)').addClass('visible');
-      // $(`ul.pltheme_wrapp > li:not(:nth-child(1))`).removeClass('hidden');
-
 
       if (theme_num >= 2) {
         console.log(theme_num);
@@ -45,6 +40,7 @@ $(function () {
       theme_num--;
     }
   });
+
   // DOWNボタン押下時の処理
   $('button.tm_down').on('click', function (e) {
     theme_num--;

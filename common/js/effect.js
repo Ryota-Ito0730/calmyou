@@ -1,3 +1,6 @@
+//============================================
+//プレーヤー画面中のフィルタ選択とフィルタクリアUI
+//============================================
 $(function () {
   // ↓ブラウザ読込時に表示される要素の個数番目とあわせる
   let num = 1;
@@ -81,12 +84,10 @@ $(function () {
     console.log(deleted);
     $('#photo_wrapp').removeClass(deleted);
 
-
     // 一度押下後にフィルタークリアボタンは非表示に
     $('.fl_cl').addClass('hidden');
     $('.fl_cl').removeClass('visible');
   });//onクリックメソッド閉め
-
 
   // フィルターDownボタンを押下時の処理ここから
   $('.fl_dw').on('click', function (e) {

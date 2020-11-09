@@ -7,6 +7,7 @@
   for($i; $i < $count; $i++) {
     $_SESSION[$t_arr[$i]] = $t_arr[$i];
   }
+  
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +29,17 @@
   <title>TOP | Calmyou</title>
   <!-- <link rel="icon" href="img/favicon.ico"> -->
   <link rel="stylesheet" href="common/css/style.css">
-</head>
+  <link rel="stylesheet" href="common/css/loading.css">
 
+</head>
+<!-- <div id="loading">
+  <div class="site_title">
+    <p>Online</p>
+    <p>Photo</p>
+    <p>Frame</p>
+    <h1>Calmyou</h1>
+  </div>
+</div> -->
 <body id="top">
   <header>
     <div class="hkv_filter">
@@ -166,6 +176,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="common/js/jquery-3.5.1.min.js"><\/script>');</script>  
   <script src="common/js/main.js"></script>
+
 </body>
 
 </html>
