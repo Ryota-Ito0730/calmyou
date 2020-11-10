@@ -7,7 +7,16 @@
   for($i; $i < $count; $i++) {
     $_SESSION[$t_arr[$i]] = $t_arr[$i];
   }
+
+
+
   
+  if (isset($_SESSION["count"])) {
+    $_SESSION["count"]++;
+  } else {
+    $_SESSION["count"] = 1;
+  }
+  $loading_cout = $_SESSION["count"];
 ?>
 
 <!DOCTYPE html>
@@ -30,16 +39,17 @@
   <!-- <link rel="icon" href="img/favicon.ico"> -->
   <link rel="stylesheet" href="common/css/style.css">
   <link rel="stylesheet" href="common/css/loading.css">
-
 </head>
-<!-- <div id="loading">
-  <div class="site_title">
-    <p>Online</p>
-    <p>Photo</p>
-    <p>Frame</p>
-    <h1>Calmyou</h1>
-  </div>
-</div> -->
+<?php if($loading_cout == 1): ?>
+<div id="top_loading">
+    <h1>初回</h1>
+</div>
+<?php else: ?>
+<div id="top_loading">
+  <h1>TOP</h1>
+</div>
+<?php endif; ?>
+
 <body id="top">
   <header>
     <div class="hkv_filter">
@@ -174,7 +184,7 @@
   <!-- LINE -->
   <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async"defer="defer"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="common/js/jquery-3.5.1.min.js"><\/script>');</script>  
+  <script>window.jQuery || document.write('<script src="common/js/jquery-3.5.1.min.js"><\/script>');</script>
   <script src="common/js/main.js"></script>
 
 </body>

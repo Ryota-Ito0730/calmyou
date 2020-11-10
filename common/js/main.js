@@ -1,13 +1,27 @@
 // =========================
 // トップページ内の処理を記述
 // =========================
+
 $(function () {
-  // cookie操作
-  //main.js:7 PHPSESSID=h6cmv7nnc2o3rq7trpulhm1nar
-  let cookie = document.cookie;
-  console.log(cookie);
 
+  //トップページ読み込み直後と、2度目以降の表示でローディング画面を切り替える
 
+  //画面ロード時に呼ばれる
+  $(window).on('load', function () {
+    let h1 = $('#top_loading h1');
+    let h1_text = h1.html().split('');
+    h1.html('');
+    $.each(h1_text, function (idx) {
+      let displayed_str = $(`<span>${h1_text[idx]}</span>`).css({
+        'opacity': '0',
+      });
+      displayed_str.appendTo(h1).delay(idx * 220);
+      displayed_str.animate({
+        'opacity': '1',
+      }, 3000);
+    });
+    $('#top_loading').addClass('top_loaded');
+  });
 
   // =================================
   // アドレスバーの高さを除いた値を取得
