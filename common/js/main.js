@@ -2,7 +2,7 @@
 // トップページ内の処理を記述
 // =========================
 $(function () {
-  if (loaded_count >= 1) {
+  if (loaded_count == 1) {
     // 初回ローディングの処理
     // 縦スクロール禁止
     $('html').addClass('scroll_prevent');
@@ -80,24 +80,7 @@ $(function () {
 
     });
   }
-  //  else {
-  //   // ローディング2回目以降
-  //   $(window).on('load', function () {
-  //     let h1 = $('#top_loading h1');
-  //     let h1_text = h1.html().split('');
-  //     h1.html('');
-  //     $.each(h1_text, function (idx) {
-  //       let displayed_str = $(`<span>${h1_text[idx]}</span>`).css({
-  //         'opacity': '0',
-  //       });
-  //       displayed_str.appendTo(h1).delay(idx * 220);
-  //       displayed_str.animate({
-  //         'opacity': '1',
-  //       }, 3000);
-  //     });
-  //     $('#top_loading').addClass('af_sec_loaded');
-  //   });
-  // }
+
 
 
   // =========================
