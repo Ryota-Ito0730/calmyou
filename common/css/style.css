@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*
 主たるブレイクポイント
 768px以下sp.tab
@@ -9,16 +10,14 @@ test
 /*===============
 共通設定 & 汎用クラス
 ===============*/
-*
-{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-weight: normal;
 }
 
-html
-{
+html {
   font-size: 62.5%;
   /* to hide scrollbar */
   overflow-y: scroll;
@@ -32,13 +31,11 @@ html
   -ms-user-select: none;/* Microsoft */
 }
 
-html::-webkit-scrollbar
-{
+html::-webkit-scrollbar {
   display: none;/* Chrome、Safari */
 }
 
-body
-{
+body {
   font-size: 1.6rem;
   font-family:メイリオ,Meiryo,sans-serif;
   line-height: 2;
@@ -48,19 +45,16 @@ body
   list-style: none;
 }
 
-a
-{
+a {
   text-decoration: none;
   color: rgb(221, 221, 221);
 }
 
-li
-{
+li {
   list-style: none;
 }
 
-button
-{
+button {
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -68,7 +62,6 @@ button
   padding: 0;
   appearance: none;
 }
-
 
 /* ローディングアニメーションここから */
 #loading {
@@ -88,27 +81,21 @@ button
 }
 /* ローディングアニメーションここまで */
 
-
-
-.inner
-{
+.inner {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.row
-{
+.row {
   margin-top: 80px;
 }
 
-.hover
-{
+.hover {
   opacity: 1;
 }
 
-.hover:hover
-{
+.hover:hover {
   opacity: .8;
 }
 
@@ -116,8 +103,7 @@ button
   transition: .8s;
 }
 
-.side
-{
+.side {
   padding-left: 2.8%;
   padding-right: 2.8%;
   margin-left: auto;
@@ -125,8 +111,8 @@ button
 }
 
 @media screen and (min-width:585px) {
-  .side
-  {
+
+  .side {
     padding-left:16.380px;
     padding-right: 16.380px;
     margin-left: auto;
@@ -135,8 +121,7 @@ button
 
 }/* ===== end of @media screen and (min-width: 585px) ===== */
 
-.btn
-{
+.btn {
   width: 50px;
   height: 50px;
   background-color: #B8B3B6;
@@ -146,23 +131,20 @@ button
   cursor: pointer;
 }
 
-.lead
-{
+.lead {
   padding-top: 25px;
   max-width: 650px;
   margin-left: auto;
   margin-right: auto;
 }
 
-button#top_reverse
-{
+button#top_reverse {
   right: 10px;
   bottom: 10px;
   z-index: 500;
 }
 
-button#top_reverse
-{
+button#top_reverse {
 /*↓1021
   display: flex;
   flex-direction: column;
@@ -341,10 +323,21 @@ button#top_menu.on span
   background-position: center center;
   height: 100vh;
   width: 100%;
+  transition: background-image 1s ease-in-out;
 }
 
-#top header .hkv_filter
-{
+#top header .hkv_filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 100;
+  transition: 1s;
+}
+
+#top header .hkv_filter.on {
   position: absolute;
   top: 0;
   left: 0;
@@ -353,6 +346,16 @@ button#top_menu.on span
   background-color: rgba(0, 0, 0, .4);
   z-index: 100;
 }
+
+/* ↓ jscontrol生成分 */
+#top header div.site_title p span {
+  color:black;
+}
+
+#top header div.site_title p span.on {
+  color:white;
+}
+/* ↑ scontrol生成分ここまで */
 
 #top header div.site_title
 {
@@ -363,22 +366,49 @@ button#top_menu.on span
   transform: translateX(-50%) translateY(-50%);
 }
 
-#top header div.site_title h1
-{
+#top header div.site_title p {
+  /* opacity: 0; */
+  visibility: visible;
+}
+
+#top header div.site_title p span {
+  opacity: 0;
+  visibility: visible;
+}
+
+#top header div.site_title h1 {
+  color:black;
   font-size: 3.2rem;
   margin-left: auto;
   margin-right: auto;
+  visibility: visible;
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: 1s;
 }
 
-#top header div.site_title::after
-{
-  /*
-  Garbled prevention(The content:"- カーミュー -";)
-  Entered in Unicode
-  */
-  content: "-\a0\30AB\30FC\30DF\30E5\30FC\a0-";
+#top header div.site_title h1.d_on {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+#top header div.site_title h1.d_on.on {
+  color:white;
+}
+
+/* #top header div.site_title::after */
+#top header div.site_title::after {
+  content: "- カーミュー -";
   display: block;
   text-align: center;
+  transition: 1s;
+  opacity: 0;
+  transform: translate3d(0,30px,0);
+  color:black;
+}
+
+#top header div.site_title.on::after {
+  color:white;
 }
 
 #top header .vertical

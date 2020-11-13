@@ -1,5 +1,5 @@
 /* ローディングアニメーションここから */
-#loading,
+#und_loading,
 #top_loading {
   display: table;
   width: 100vw;
@@ -10,52 +10,90 @@
   left: 0;
   z-index: 9999;
   opacity: 1;
+  transform-origin: right top;
+}
+
+/* #und_loading */
+@keyframes pl_loading {
+
+  0% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+    visibility: hidden;
+  }
+
 }
 
 /* #top_loading  */
-@keyframes pl_loading {
+@keyframes first_loading {
+
   0% {
     opacity: 1;
+    transform: scaleX(1);
   }
 
   70% {
     opacity: 1;
+    transform: scaleX(1);
   }
 
   100% {
-    opacity: 0;
+    transform: scaleX(0);
     visibility: hidden;
   }
+
 }
 
-@keyframes top_loading {
+/* #top_loading  */
+@keyframes af_sec_loading {
+
   0% {
     opacity: 1;
+    transform: scaleX(1);
   }
 
   70% {
     opacity: 1;
+    transform: scaleX(1);
   }
 
   100% {
-    opacity: 0;
+    transform: scaleX(0);
     visibility: hidden;
   }
+
 }
 
-#loading.loaded { 
-  animation: pl_loading 5s ease-in-out forwards;
-}
-
-#top_loading.top_loaded { 
-  animation: top_loading 5s ease-in-out forwards;
-}
-
-#loading h1 {
+/* プレイヤーページ */
+#und_loading h1 {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
+
+#und_loading.under_loaded { 
+  animation: pl_loading 5s ease-in-out forwards;
+}
+
+/* トップページ:初回のローディング */
+#top_loading.first_loaded { 
+  animation: first_loading 5s ease-in-out forwards;
+}
+
+/* トップページ:2度目以降のローディング */
+#top_loading.af_sec_loaded { 
+  animation: af_sec_loading 5s ease-in-out forwards;
+}
+
 #top_loading h1 {
   visibility: hidden;
   display: table-cell;

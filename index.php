@@ -1,28 +1,33 @@
 <?php 
-  //get theme directory name.
+  // テーマ選択に備えあらかじめセッションにフォルダ名をセット
   session_start();
   $t_arr = ['flower', 'koyo', 'cat'];
-  $i=0;
+  $i = 0;
   $count = count($t_arr);
   for($i; $i < $count; $i++) {
     $_SESSION[$t_arr[$i]] = $t_arr[$i];
   }
-
-
-
-  
+  // TOPページのローディングアニメーションを変化させる
   if (isset($_SESSION["count"])) {
     $_SESSION["count"]++;
   } else {
     $_SESSION["count"] = 1;
   }
-  $loading_cout = $_SESSION["count"];
+  $loading_count = $_SESSION["count"];
+  $loaded_count = json_encode($loading_count, JSON_HEX_TAG | JSON_HEX_AMP);
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
 
 <head prefix="og:http://ogp.me/ns#">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TRD8H7V');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Calmyou(カーミュー) オンライン上で楽しめる癒しのフォトフレーム あなたにひとときの安らぎを提供します">
@@ -39,18 +44,25 @@
   <!-- <link rel="icon" href="img/favicon.ico"> -->
   <link rel="stylesheet" href="common/css/style.css">
   <link rel="stylesheet" href="common/css/loading.css">
+  <script>
+    let loaded_count = JSON.parse('<?php echo  $loaded_count; ?>');
+  </script>
+  <!-- twitter -->
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <!-- LINE -->
+  <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async"defer="defer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="common/js/jquery-3.5.1.min.js"><\/script>');</script>
+
+  <script src="common/js/main.js"></script>
 </head>
-<?php if($loading_cout == 1): ?>
-<div id="top_loading">
-    <h1>初回</h1>
-</div>
-<?php else: ?>
-<div id="top_loading">
-  <h1>TOP</h1>
-</div>
-<?php endif; ?>
 
 <body id="top">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRD8H7V"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <?php if($loaded_count >= 1): ?>
   <header>
     <div class="hkv_filter">
       <div class="site_title">
@@ -64,6 +76,7 @@
       <div class="arrow_diagonal"></div>
     </div>
   </header>
+  <?php endif; ?>
   <div id="sp_menu">
     <div class="sp_kv_filter">
       <nav class="inner side">
@@ -179,13 +192,6 @@
       <p class="copy"><small>&copy;2020Calmyou </small></p>
     </div>
   </footer>
-  <!-- twitter -->
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <!-- LINE -->
-  <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async"defer="defer"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="common/js/jquery-3.5.1.min.js"><\/script>');</script>
-  <script src="common/js/main.js"></script>
 
 </body>
 

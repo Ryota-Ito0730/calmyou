@@ -3,9 +3,9 @@ $(function () {
 
   $(window).on('load', function () {
     let h1_text = dir_name.split("");
-    let h1 = $('#loading h1');
+    let h1 = $('#und_loading h1');
 
-    $.each(h1_text, function (idx, val) {
+    $.each(h1_text, function (idx) {
       let displayed_str = $(`<span>${h1_text[idx]}</span>`).css({
         'opacity': '0',
       });
@@ -14,6 +14,6 @@ $(function () {
         opacity: '1',
       }, 3000);
     });
-    $('#loading').addClass('loaded');
+    $('#und_loading').addClass('under_loaded');
   });
 });//////////////////////

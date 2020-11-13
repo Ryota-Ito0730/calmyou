@@ -50,7 +50,7 @@
   <script src="../common/js/plmenu_btn.js"></script>
   <script src="../common/js/theme_select.js"></script>
 </head>
-<div id="loading">
+<div id="und_loading">
     <h1></h1>
 </div>
 <body id="player_top">
