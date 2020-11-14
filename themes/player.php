@@ -17,8 +17,6 @@
     $php_json = json_encode($play_data, JSON_HEX_TAG | JSON_HEX_AMP);
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -56,12 +54,7 @@
 <body id="player_top">
   <main id="player_main">
     <div id="photo_wrapp">
-         <!--
-          
-          ここにimgが生成される
-        
-        -->
-      
+    <!--ここにimgが生成される-->
     </div><!-- id="photo_wrapp"ここまで -->
     <div id="photo_filter">    
       <div class="pl_ctrl_1">
@@ -77,7 +70,6 @@
         <button class="plLeft_btn_1"><img  src="../common/img/el_parts/pl_left.svg" alt=""></button>
         <button class="plRight_btn_1"><img  src="../common/img/el_parts/pl_right.svg" alt=""></button>
       </div>
-
       <div class="pl_ctrl_2">
         <div class="pl_wrapp">
           <button class="slow"><img  src="../common/img/el_parts/pl_up.svg" alt=""></button>
@@ -100,7 +92,6 @@
         <button class="plLeft_btn_2"><img  src="../common/img/el_parts/pl_left.svg" alt=""></button>
         <button class="plRight_btn_2"><img  src="../common/img/el_parts/pl_right.svg" alt=""></button>
       </div>
-
       <div class="pl_ctrl_3">
         <div class="fl_wrapp">
           <button class="fl_cl">CLEAR</button>
@@ -145,11 +136,6 @@
   </button>
   <button id="top_reverse" class="btn hover"><img src="../common/img/el_parts/top_triangle2.png"alt=""><span>Top</span></button> -->
   <!-- play time duration -->
-
   <button class="pl_ctrl_btn">Menu</button>
-
-
-
 </body>
-
 </html>
