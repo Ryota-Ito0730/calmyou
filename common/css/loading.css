@@ -1,3 +1,4 @@
+@charset "utf-8";
 /* ローディングアニメーションここから(プレイヤーページのみ。TOPはmain.jsでコントロール) */
 #und_loading,
 #top_loading {

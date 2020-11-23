@@ -2,6 +2,7 @@
 // コントロールメニューのテーマセレクトUIの挙動は本ファイルに記述する
 // ============================================================
 $(function () {
+
   // ↓ブラウザ読込時に表示される要素の個数番目とあわせる
   let theme_num = 1;
   // ↓ブラウザ読込時の初期値↓(クリックと同時に表示を消す)
@@ -18,7 +19,6 @@ $(function () {
     theme_num++;
     // ↓連続クリック数が合計要素数を超えない限り、if内の処理を実行
     if (!(theme_num > 3)) {
-      console.log(theme_num);
       $(`ul.pltheme_wrapp > li:nth-child(${theme_num})`).removeClass('hidden');
       $(`ul.pltheme_wrapp > li:nth-child(${theme_num})`).addClass('visible');
 
@@ -26,11 +26,9 @@ $(function () {
       $(`ul.pltheme_wrapp > li:not(:nth-child(${theme_num}))`).addClass('hidden');
 
       if (theme_num >= 2) {
-        console.log(theme_num);
         $('button.tm_down').addClass('visible');
       }
       if (theme_num >= 3) {
-        console.log(theme_num);
         $('button.tm_up').addClass('hidden');
         $('button.tm_up').removeClass('visible');
       }
@@ -45,19 +43,16 @@ $(function () {
   $('button.tm_down').on('click', function (e) {
     theme_num--;
     if (!(theme_num < 1)) {
-      console.log(theme_num);
       $(`ul.pltheme_wrapp > li:nth-child(${theme_num})`).removeClass('hidden');
       $(`ul.pltheme_wrapp > li:nth-child(${theme_num})`).addClass('visible');
 
       $(`ul.pltheme_wrapp > li:not(:nth-child(${theme_num}))`).removeClass('visible');
       $(`ul.pltheme_wrapp > li:not(:nth-child(${theme_num}))`).addClass('hidden');
       if (theme_num <= 3) {
-        console.log(theme_num);
         $('button.tm_down').addClass('visible');
         $('button.tm_up').addClass('visible');
       }
       if (theme_num == 1) {
-        console.log(theme_num);
         $('button.tm_down').removeClass('visible');
         $('button.tm_down').addClass('hidden');
       }

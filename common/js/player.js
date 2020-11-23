@@ -9,14 +9,14 @@ $(function () {
   // ↓ブラウザ読込時に表示される要素の個数番目とあわせる
   let num = 5;
   // ↓ブラウザ読込時の初期値↓(クリックと同時に表示を消す)
-  $('ul.pltm_wrapp > li:nth-child(5)').addClass('on');
+  $('ul.pltm_wrapp > li:nth-child(5)').addClass('visible');
   // slowボタン押下時の処理
   $('.slow').on('click', function (e) {
     // ↓クリックされる度、指定要素の個数番目を増やす
     num++;
-    // ↓連続クリック数が合計要素数を超えない限り、if内の処理を実行k
+    // ↓連続クリック数が合計要素数を超えない限り、if内の処理を実行
     if (!(num > 12)) {
-      $(`ul.pltm_wrapp > li:nth-child(${num})`).addClass('on');
+      $(`ul.pltm_wrapp > li:nth-child(${num})`).addClass('visible');
       $(`ul.pltm_wrapp > li:not(:nth-child(${num}))`).removeAttr('class');
       // ボタン表示非表示
       if (num >= 2) {
@@ -36,7 +36,7 @@ $(function () {
   $('.fast').on('click', function (e) {
     num--;
     if (!(num < 3)) {
-      $(`ul.pltm_wrapp > li:nth-child(${num})`).addClass('on');
+      $(`ul.pltm_wrapp > li:nth-child(${num})`).addClass('visible');
       $(`ul.pltm_wrapp > li:not(:nth-child(${num}))`).removeAttr('class');
       if (num <= 12) {
         $('button.fast').addClass('visible');
@@ -79,7 +79,6 @@ $(function () {
         'transition': `opacity ${Math.floor(num - (num - 1)) - 0.2}s`
       });
     });
-
     setTimeout(slideNumber, `${num}000`);
   }
 
