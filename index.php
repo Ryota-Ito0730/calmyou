@@ -33,8 +33,8 @@
   <meta property="og:site_name" content="Calmyou(カーミュー) オンライン上で楽しめる癒しのフォトフレームサービス">
   <meta property="og:title" content="TOP | Calmyou(カーミュー) オンライン上で楽しめる癒しのフォトフレームサービス">
   <meta property="og:type" content="website">
-  <!-- <meta property="og:url" content="https://intp.site/221/Henrik/index.html">
-  <meta property="og:image" content="https://intp.site/221/Henrik/img/henrik_og.png"> -->
+  <meta property="og:url" content="https://intp.site/221/calmyou/">
+  <!-- <meta property="og:image" content="https://intp.site/221/Henrik/img/henrik_og.png"> -->
   <meta property="og:description" content="Calmyou(カーミュー) オンライン上で楽しめる癒しのフォトフレーム あなたにひとときの安らぎを提供します">
   <meta http-equiv="x-ua-compatible" content="IE=9">
   <meta http-equiv="x-ua-compatible" content="IE=EmulateIE9">
@@ -44,7 +44,7 @@
   <link rel="stylesheet" href="common/css/loading.css">
   <link rel="stylesheet" href="common/css/top_main.css">
   <script>
-    let loaded_count = JSON.parse('<?php echo  $loaded_count; ?>');
+    let loaded_count = JSON.parse('<?php echo $loaded_count; ?>');
   </script>
   <!-- twitter -->
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -98,13 +98,13 @@
           <li>
             <ul ontouchstart="">
               <li><a href="themes/player.php?date=<?= $_SESSION[$t_arr[0]] ?>"><img src="common/img/thumbnail/thumbnail_cherry_blossom.png"
-                    alt="花のテーマ画像"><span>花</span></a></li>
-              <li><a href="themes/player.php?date=<?= $_SESSION[$t_arr[1]] ?>"><img src="common/img/thumbnail/thumbnail_koyo.png" alt="紅葉のテーマ画像"><span>紅葉</span></a></li>
-              <li><a href="themes/player.php?date=<?= $_SESSION[$t_arr[2]] ?>"><img src="common/img/thumbnail/thumbnail_cat.png" alt="猫のテーマ画像"><span>猫</span></a></li>
+                    alt="花のテーマ画像"><span>Flower</span></a></li>
+              <li><a href="themes/player.php?date=<?= $_SESSION[$t_arr[1]] ?>"><img src="common/img/thumbnail/thumbnail_koyo.png" alt="紅葉のテーマ画像"><span>Koyo</span></a></li>
+              <li><a href="themes/player.php?date=<?= $_SESSION[$t_arr[2]] ?>"><img src="common/img/thumbnail/thumbnail_cat.png" alt="猫のテーマ画像"><span>Cat</span></a></li>
             </ul>
           </li>
-          <li><a href="">Contact</a></li>
-          <li><a href="">Top</a></li>
+          <li><a href="contact/" target="_blank" rel="noopener noreferrer">Contact</a></li>
+          <li><a href="./">Top</a></li>
         </ul>
       </nav>
     </div>
@@ -114,8 +114,8 @@
     <div class="right_line"></div>
     <div class="left_line"></div>
   </button>
-  <button id="top_reverse" class="d_non btn hover">
-    <img src="common/img/el_parts/top_triangle2.png" alt="" ontouchstart="">
+  <button id="top_reverse" class="d_non btn hover" ontouchstart="">
+    <img src="common/img/el_parts/top_triangle2.png" alt="">
     <span>Top</span>
   </button>
   <main id="top_main" class="row">
@@ -129,21 +129,21 @@
       <div class="fl_box">
         <div class="theme row side el_display" ontouchstart="">
           <a href="themes/player.php?date=<?= $_SESSION[$t_arr[0]] ?>">
-            <h3>花</h3>
+            <h3>Flower</h3>
             <img src="common/img/theme_img/theme_cherry_blossom.png" alt="花のテーマ画像">
             <p class="lead">美しさや華やかさ、時に儚さすら感じさせてくれる花は、様々な表現で私たちを魅了します。懸命に咲く、瞬間の芸術をご堪能ください。</p>
           </a>
         </div>
         <div class="theme row side el_display" ontouchstart="">
           <a href="themes/player.php?date=<?= $_SESSION[$t_arr[1]] ?>">
-            <h3>紅葉</h3>
+            <h3>Koyo</h3>
             <img src="common/img/theme_img/theme_koyo.png" alt="紅葉のテーマ画像">
             <p class="lead">秋の風物詩、紅葉は季節の移り変わりを暖かみのある表情で伝えてくれます。艶やかな情緒ある風景をお楽しみください。</p>
           </a>
         </div>
         <div class="theme row side el_display" ontouchstart="">
           <a href="themes/player.php?date=<?= $_SESSION[$t_arr[2]] ?>">
-            <h3>猫</h3>
+            <h3>Cat</h3>
             <img src="common/img/theme_img/theme_cat.png" alt="猫のテーマ画像">
             <p class="lead">そのモフモフ感、自由な振る舞い、愛くるしさの化身ともいえる猫達。その可愛さや奔放さを目の前にしたら、悶えること間違いなしです。</p>
           </a>
@@ -179,28 +179,28 @@
               <li>
                 <a href="themes/player.php?date=<?= $_SESSION[$t_arr[0]] ?>">
                   <img src="common/img/thumbnail/thumbnail_cherry_blossom.png" alt="花のテーマ画像">
-                  <span>花</span>
+                  <span>Flower</span>
                 </a>
               </li>
               <li>
                 <a href="themes/player.php?date=<?= $_SESSION[$t_arr[1]] ?>">
                   <img src="common/img/thumbnail/thumbnail_koyo.png" alt="紅葉のテーマ画像">
-                  <span>紅葉</span>
+                  <span>Koyo</span>
                 </a>
               </li>
               <li>
                 <a href="themes/player.php?date=<?= $_SESSION[$t_arr[2]] ?>">
                   <img src="common/img/thumbnail/thumbnail_cat.png" alt="猫のテーマ画像">
-                  <span>猫</span>
+                  <span>Cat</span>
                 </a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="">Contact</a>
+            <a href="contact/" target="_blank" rel="noopener noreferrer">Contact</a>
           </li>
           <li>
-            <a href="">Top</a>
+            <a href="./">Top</a>
           </li>
         </ul>
       </nav>

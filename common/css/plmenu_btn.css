@@ -174,16 +174,6 @@ button.pl_ctrl_btn.on span {
   grid-row: 1 / 2;
 }
 
-/* 高さ400px以上の処理 */
-@media screen and (min-height:400px) {
-  /* Interval用のTOPボタンの位置調整 */
-  .interval_tr {
-    transform:translate3d(16px, -4px, 0);
-  }
-
-}/* ===== end of @media screen and (min-width:600px) ===== */
-
-
 .contact_btn {
   grid-row: 3 / 4;
   transform: translate3d(33px, 10px, 0);
@@ -416,7 +406,7 @@ button.contact_btn::before {
 
 button.contact_btn:hover::before {
   transform: translate3d(-10px, -45px, 0);
-   opacity: 1;
+  opacity: 1;
  }
 
 button.plLeft_btn_1::before,

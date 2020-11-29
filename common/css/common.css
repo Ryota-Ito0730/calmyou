@@ -103,6 +103,10 @@ button {
   transition: .8s;
 }
 
+.d_non {
+  display: none;
+}
+
 .side {
   padding-left: 2.8%;
   padding-right: 2.8%;

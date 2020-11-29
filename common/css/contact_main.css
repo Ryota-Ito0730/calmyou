@@ -1,0 +1,611 @@
+@charset "utf-8";
+
+/*===============
+#top_main
+===============*/
+#contact #top_main p,
+#contact_check #top_main p,
+#contact_thx #top_main p {
+  line-height: 1.8;
+}
+
+/* コンタクトフォーム：ヘッダー部分 */
+#contact header,
+#contact_check header,
+#contact_thx header {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  background-image: URL(../img/key_visual/top_key1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#contact .header_cover,
+#contact_check .header_cover,
+#contact_thx .header_cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+#contact header h1,
+#contact_check header h1,
+#contact_thx header h1 {
+  position: absolute;
+  z-index: 100;
+  color: #f3f3f3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: middle;
+  letter-spacing: 1px;
+}
+/* コンタクトフォーム：ヘッダー部分ここまで */
+
+/* コンタクトフォーム：説明文ここから */
+#contact #top_main #forms p,
+#contact_check #top_main #forms p,
+#contact_thx #top_main #forms p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact #top_main #forms p:nth-child(1),
+#contact_check #top_main #forms p:nth-child(1),
+#contact_thx #top_main #forms p:nth-child(1) {
+  padding-top: 80px;
+}
+
+@media screen and (min-width:517px) {
+  .text_ib {
+    display: inline-block;
+  }
+  .lead {
+    padding-top: 25px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .side {
+    padding-left: 14.424px;
+    padding-right: 14.424px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #contact #top_main #forms p,
+  #contact_check #top_main #forms p,
+  #contact_thx #top_main #forms p {
+    max-width: 525px;
+  }
+
+  #contact #top_main .form_wrapper,
+  #contact_check #top_main .form_wrapper,
+  #contact_thx #top_main .form_wrapper {
+    max-width: 525px;
+  }
+}/* ===== end of @media screen and (max-width:422px) ===== */
+
+/* コンタクトフォーム：説明文ここまで */
+
+/* コンタクトフォームのフロー案内部分 */
+/* ↓ contact common class */
+.contact_list_top {
+  padding-top: 80px;
+}
+
+.contact_row {
+  margin-bottom: 40px;
+}
+
+.contact_right_gap {
+  margin-right: 10px;
+}
+
+.contact_notice {
+  font-weight: 900;
+  margin-top:30px;
+}
+
+.form_container {
+  width: 100%;
+  padding-bottom: 80px;
+  background-color: #fff;
+}
+/* ↑ contact common class */
+
+#contact .form_wrapper,
+#contact_check .form_wrapper,
+#contact_thx .form_wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 650px;
+}
+
+#contact div.flow_area,
+#contact_check div.flow_area,
+#contact_thx div.flow_area {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#contact div.flow_area ul li,
+#contact_check div.flow_area ul li,
+#contact_thx div.flow_area ul li,
+#contact form span:not(.attention) {
+  display: inline-block;
+  color: #fff;
+}
+
+#contact div.flow_area ul li:not(:nth-child(even)),
+#contact span.form_el,
+#contact_check div.flow_area ul li:not(:nth-child(even)),
+#contact_check span.form_el,
+#contact_thx div.flow_area ul li:not(:nth-child(even)) {
+  background-color: rgb(184, 179, 182);
+  text-align: center;
+  line-height: 1.7;
+  border-radius: 3px;
+  width: 58px;
+  height: 23px;
+}
+
+#contact span.attention {
+  display: block;
+  color: rgb(239, 101, 101);
+  letter-spacing: 1px;
+}
+
+#contact div.flow_area ul li:nth-child(even),
+#contact_check div.flow_area ul li:nth-child(even),
+#contact_thx div.flow_area ul li:nth-child(even) {
+  vertical-align: -1px;
+}
+
+#contact div.flow_area ul li.current,
+#contact_check div.flow_area ul li.current,
+#contact_thx div.flow_area ul li.current {
+  background-color: rgb(239, 101, 101);
+}
+
+#contact form dd,
+#contact_check dd {
+  margin-bottom: 50px;
+}
+
+#contact form dd input {
+  width: 100%;
+  max-width: 450px;
+  border: solid 1px rgb(184, 179, 182);
+  border-radius: 3px;
+  font-size: 100%;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
+#contact form textarea {
+  width: 100%;
+  max-width: 650px;
+  border: solid 1px rgb(184, 179, 182);
+  border-radius: 3px;
+  font-size: 100%;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
+.check_item {
+  word-wrap: break-word;
+}
+
+#contact .textlines:focus,
+#contact_check .check_item {
+  background-color: #ffc;  /* 背景色 */
+  outline: none;           /* ※ブラウザが標準で付加する線を消したいとき */
+}
+
+.check_btn_wrapper {
+  font-size: 0;
+}
+
+#contact form > p,
+#contact_check .form_wrapper .check_btn_wrapper p,
+#contact_thx .form_wrapper .thanks_btn_wrapper p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact form > p {
+  text-align: center;
+}
+
+#contact form > p input {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+
+#contact_check .form_wrapper .check_btn_wrapper p {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+  font-size: 0;
+}
+
+#contact_thx .form_wrapper .thanks_btn_wrapper p {
+  text-align: center;
+}
+
+#contact_check .form_wrapper .check_btn_wrapper p a,
+#contact_thx .form_wrapper .thanks_btn_wrapper p a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  outline: none;
+  border: none;
+}
+
+#contact_check .form_wrapper .check_btn_wrapper p a,
+#contact_thx .form_wrapper .thanks_btn_wrapper p a {
+  line-height: 4;
+}
+
+#contact form > p input {
+  background-color: rgb(232, 160, 0);
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  letter-spacing: 1px;
+  transition: transform .4s ease-out;
+  font-weight: bold;
+}
+
+#contact_thx .form_wrapper .thanks_btn_wrapper p a {
+  background-color: rgb(232, 160, 0);
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  transition: transform .4s ease-out;
+  font-weight: bold;
+  font-size: 13.333px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#contact_check .form_wrapper .check_btn_wrapper p:nth-of-type(1) a {
+  background-color: rgb(232, 160, 0);
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  transition: transform .4s ease-out;
+  font-weight: bold;
+  font-size: 13.333px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#contact_check .form_wrapper .check_btn_wrapper p:nth-of-type(2) a {
+  background-color:rgb(184, 179, 182);
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  transition: transform .4s ease-out;
+  font-weight: bold;
+  font-size: 13.333px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#contact form > p input:hover,
+#contact_check .form_wrapper .check_btn_wrapper p a:hover,
+#contact_thx .form_wrapper .thanks_btn_wrapper p a:hover {
+  transform: rotate(360deg);
+}
+/* フロー案内部分ここまで */
+/* コンタクト フッター部ここから↓ */
+/*===============
+#contact footer
+===============*/
+#contact footer,
+#contact_check footer,
+#contact_thx footer {
+  position: relative;
+  bottom:0;
+  left: 0;
+  background-image: URL(../img/key_visual/top_key1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 80vh;
+  width: 100%;
+}
+
+#contact footer .fkv_filter,
+#contact_check footer .fkv_filter,
+#contact_thx footer .fkv_filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  z-index: 100;
+}
+
+#contact footer nav > ul,
+#contact_check footer nav > ul,
+#contact_thx footer nav > ul {
+  position: absolute;
+  top: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+#contact footer nav > ul > li,
+#contact_check footer nav > ul li,
+#contact_thx footer nav > ul li {
+  margin-left: 0;
+  margin-right: auto;
+  color: rgb(221, 221, 221);
+}
+
+#contact footer nav > ul > li:first-child,
+#contact footer nav > ul > li:nth-of-type(3),
+#contact footer nav > ul > li:last-child,
+#contact_check footer nav > ul > li:first-child,
+#contact_check footer nav > ul > li:nth-of-type(3),
+#contact_check footer nav > ul > li:last-child,
+#contact_thx footer nav > ul > li:first-child,
+#contact_thx footer nav > ul > li:nth-of-type(3),
+#contact_thx footer nav > ul > li:last-child {
+  margin-left: -40%;
+}
+
+#contact footer nav > ul > li:nth-of-type(2),
+#contact footer nav > ul > li:nth-of-type(3),
+#contact footer nav > ul > li:last-child,
+#contact_check footer nav > ul > li:nth-of-type(2),
+#contact_check footer nav > ul > li:nth-of-type(3),
+#contact_check footer nav > ul > li:last-child,
+#contact_thx footer nav > ul > li:nth-of-type(2),
+#contact_thx footer nav > ul > li:nth-of-type(3),
+#contact_thx footer nav > ul > li:last-child {
+  margin-left: -40%;
+}
+
+#contact footer nav > ul li > ul,
+#contact_check footer nav > ul li > ul,
+#contact_thx footer nav > ul li > ul {
+  width: 100%;
+  margin-top: 10%;
+}
+
+#contact footer nav > ul li > ul li,
+#contact_check footer nav > ul li > ul li,
+#contact_thx footer nav > ul li > ul li {
+  margin-top: 30%;
+  margin-left: 40%;
+  width: 100%;
+}
+
+#contact footer nav > ul li > ul li:first-child,
+#contact_check footer nav > ul li > ul li:first-child,
+#contact_thx footer nav > ul li > ul li:first-child {
+  margin-top: 0;
+  margin-left: 40%;
+  width: 100%;
+}
+
+#contact footer nav ul img,
+#contact_check footer nav ul img,
+#contact_thx footer nav ul img {
+  vertical-align: -30%;
+  padding-right: 20px;
+}
+
+#contact footer .sns_icon,
+#contact_check footer .sns_icon,
+#contact_thx footer .sns_icon {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-70%);
+}
+
+#contact footer .sns_icon p,
+#contact_check footer .sns_icon p,
+#contact_thx footer .sns_icon p {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#contact footer p.copy,
+#contact_check footer p.copy,
+#contact_thx footer p.copy {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  font-family: Verdana;
+  color: rgb(221, 221, 221);
+}
+
+#contact footer p.copy span,
+#contact_check footer p.copy span,
+#contact_thx footer p.copy span {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: rgb(221, 221, 221);
+}
+
+/* footer */
+@media screen and (min-width:600px) {
+
+  #contact footer nav > ul,
+  #contact_check footer nav > ul,
+  #contact_thx footer nav > ul {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #contact footer nav > ul > li,
+  #contact_check footer nav > ul > li,
+  #contact_thx footer nav > ul > li {
+    margin-left: 0;
+    margin-right: auto;
+    color: rgb(221, 221, 221);
+  }
+
+  #contact footer nav > ul > li:first-child,
+  #contact footer nav > ul > li:nth-of-type(3),
+  #contact footer nav > ul > li:last-child,
+  #contact_check footer nav > ul > li:first-child,
+  #contact_check footer nav > ul > li:nth-of-type(3),
+  #contact_check footer nav > ul > li:last-child,
+  #contact_thx footer nav > ul > li:first-child,
+  #contact_thx footer nav > ul > li:nth-of-type(3),
+  #contact_thx footer nav > ul > li:last-child {
+    margin-left: -40%;
+  }
+
+  #contact footer nav > ul > li:nth-of-type(2),
+  #contact_check footer nav > ul > li:nth-of-type(2),
+  #contact_thx footer nav > ul > li:nth-of-type(2) {
+    margin-top: 0; 
+  }
+
+  #contact footer nav > ul li > ul,
+  #contact_check footer nav > ul li > ul,
+  #contact_thx footer nav > ul li > ul {
+    display: flex;
+    width: 100%;
+  }
+
+  #contact footer nav > ul li > ul li,
+  #contact_check footer nav > ul li > ul li,
+  #contact_thx footer nav > ul li > ul li {
+    margin-top: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #contact footer nav > ul li > ul li:first-child,
+  #contact_check footer nav > ul li > ul li:first-child,
+  #contact_thx footer nav > ul li > ul li:first-child {
+    margin-top: 20%;
+    margin-left: 10%;
+    width: 100%;
+  }
+
+  #contact footer nav > ul li > ul li a,
+  #contact_check footer nav > ul li > ul li a,
+  #contact_thx footer nav > ul li > ul li a {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  #contact footer nav > ul li > ul img,
+  #contact_check footer nav > ul li > ul img,
+  #contact_thx footer nav > ul li > ul img {
+    padding-right: 0;
+  }
+
+}/* ===== end of @media screen and (min-width:600px) ===== */
+
+@media screen and (min-width:769px) {
+
+  #contact footer nav > ul,
+  #contact_check footer nav > ul,
+  #contact_thx footer nav > ul {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}/* ===== end of @media screen and (min-width:769px) ===== */
+
+@media (orientation: landscape) and (max-height:380px) {
+
+  #contact footer nav > ul,
+  #contact_check footer nav > ul,
+  #contact_thx footer nav > ul {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #contact footer nav > ul > li,
+  #contact_check footer nav > ul > li,
+  #contact_thx footer nav > ul > li {
+    margin-left: 0;
+    margin-right: auto;
+    color: rgb(221, 221, 221);
+  }
+
+  #contact footer nav > ul > li:first-child,
+  #contact footer nav > ul > li:nth-of-type(3),
+  #contact footer nav > ul > li:last-child,
+  #contact_check footer nav > ul > li:first-child,
+  #contact_check footer nav > ul > li:nth-of-type(3),
+  #contact_check footer nav > ul > li:last-child,
+  #contact_thx footer nav > ul > li:first-child,
+  #contact_thx footer nav > ul > li:nth-of-type(3),
+  #contact_thx footer nav > ul > li:last-child {
+    margin-left: -40%;
+  }
+
+  #contact footer nav > ul > li:nth-of-type(2),
+  #contact_check footer nav > ul > li:nth-of-type(2),
+  #contact_thx footer nav > ul > li:nth-of-type(2) {
+    margin-top: 0; 
+  }
+
+  #contact footer nav > ul li > ul,
+  #contact_check footer nav > ul li > ul,
+  #contact_thx footer nav > ul li > ul {
+    display: flex;
+    width: 100%;
+  }
+
+  #contact footer nav > ul li > ul li,
+  #contact_check footer nav > ul li > ul li,
+  #contact_thx footer nav > ul li > ul li {
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #contact footer nav > ul li > ul li:first-child,
+  #contact_check footer nav > ul li > ul li:first-child,
+  #contact_thx footer nav > ul li > ul li:first-child {
+    margin-top: 0;
+    margin-left: 10%;
+    width: 100%;
+  }
+
+  #contact footer nav > ul li > ul li a,
+  #contact_check footer nav > ul li > ul li a,
+  #contact_thx footer nav > ul li > ul li a {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  #contact footer nav > ul li > ul img,
+  #contact_check footer nav > ul li > ul img,
+  #contact_thx footer nav > ul li > ul img {
+    padding-right: 0;
+  }
+
+}
+/* ===== end of @media screen and (max-height:380px) ===== */
+/* ↑コンタクトフォーム：フッター部ここまで */

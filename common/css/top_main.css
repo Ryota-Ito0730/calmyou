@@ -6,11 +6,7 @@
 1000px以上pc2
 */
 
-.d_non {
-  display: none;
-}
-
-button#top_reverse {
+#top button#top_reverse {
   right: 10px;
   bottom: 10px;
   z-index: 500;
@@ -18,22 +14,22 @@ button#top_reverse {
 }
 
 /* js control */
-button#top_reverse.on {
+#top button#top_reverse.on {
   visibility: hidden;
   opacity: 0;
 }
 
 /* js control：ローディングアニメーション中の処理(最終的にremoveする)*/
-button#top_menu.hidden,
-button#top_reverse.hidden,
-p.vertical.hidden,
-div.arrow_down.hidden,
-div.arrow_diagonal.hidden {
+#top button#top_menu.hidden,
+#top button#top_reverse.hidden,
+#top p.vertical.hidden,
+#top div.arrow_down.hidden,
+#top div.arrow_diagonal.hidden {
   opacity: 0;
   visibility: hidden;
 }
 
-#top_reverse img {
+#top #top_reverse img {
 /*  1021 Fix ver.↓ */
   display: block;
   width: 23.57px;
@@ -42,13 +38,13 @@ div.arrow_diagonal.hidden {
   margin-right: auto;
 }
 
-#top_reverse span {
+#top #top_reverse span {
   margin-left: auto;
   margin-right: auto;
 }
 
-button#top_menu,
-button#top_reverse {
+#top button#top_menu,
+#top button#top_reverse {
   /*↓1021 Fixed ver*/
   margin-left: auto;
   margin-right: auto;
@@ -56,7 +52,7 @@ button#top_reverse {
   overflow: hidden;
 }
 
-button#top_menu {
+#top button#top_menu {
   left: 10px;
   bottom: 10px;
   z-index: 500;
@@ -65,7 +61,7 @@ button#top_menu {
 
 @media screen and (min-width:769px) {
   
-  button#top_menu {
+  #top button#top_menu {
     left: auto;
     bottom: auto;
     top: 10px;
@@ -75,14 +71,14 @@ button#top_menu {
 }/* ===== end of @media screen and (min-width:769px) ===== */
 
 
-button#top_menu span {
+#top button#top_menu span {
   display: block;
   width: 80%;
   transition: .8s;
   transform: translate3d(5px, 18px, 0);
 }
 
-button#top_menu.on span {
+#top button#top_menu.on span {
   letter-spacing: -8px;
   opacity: 0;
   visibility: hidden;
@@ -117,7 +113,7 @@ button#top_menu.on span {
 
 }
 
-.left_line {
+#top .left_line {
   background-color:#F2F2F2;
   border-radius: 3px;
   width: 3px;
@@ -128,7 +124,7 @@ button#top_menu.on span {
   animation: line_rotate_left 60s linear infinite;
 }
 
-.right_line {
+#top .right_line {
   background-color:#F2F2F2;
   border-radius: 3px;
   width: 3px;
@@ -140,7 +136,7 @@ button#top_menu.on span {
 }
 
 /* js control */
-.left_line.on {
+#top .left_line.on {
   opacity: 1;
   height: 45px;
   margin-bottom: -45px;
@@ -148,7 +144,7 @@ button#top_menu.on span {
 }
 
 /* js control */
-.right_line.on {
+#top .right_line.on {
   opacity: 1;
   height: 45px;
   margin-bottom: -2px;
@@ -158,7 +154,7 @@ button#top_menu.on span {
 /*===============
 #top header
 ===============*/
- #top header {
+#top header {
    /* control to background-image in js */
   position: relative;
   background-size: cover;
@@ -554,7 +550,7 @@ html.scroll_prevent {
 /*=========================
 #top #top_main .el_display
 =========================*/
-.el_display {
+#top .el_display {
   visibility: hidden;
   opacity: 0;
   transform: translate3d(0,-20px,0);
@@ -562,18 +558,18 @@ html.scroll_prevent {
 }
 
 /* js control  */
-.el_display.on {
+#top .el_display.on {
   visibility: visible;
   opacity: 1;
   transform: translate3d(0,0,0);
 }
 
-.hover_shadow {
+#top .hover_shadow {
   box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
   border-radius: 5px; 
 }
 
-.hover_shadow:hover {
+#top .hover_shadow:hover {
   box-shadow: 0px 8px 16px -2px rgba(10,10,10,0.1), 0px 15px 11px -10px rgba(10,10,10,0.2);
   transform: translate3d(0, -3px, 0);
 }
@@ -821,7 +817,7 @@ player.php
 ↓ 再生速度変更ボタンここから
 =============================*/
  
-.smooth {
+#top .smooth {
   transition: .4s;
 }
 
@@ -830,7 +826,7 @@ player.php
 コントローラ全体の高さを調整
 */
 
-#value_adjaster_wrapp {
+#top #value_adjaster_wrapp {
   max-width: 50%;
   margin-top: 100px;
   margin-left: auto;
@@ -838,7 +834,7 @@ player.php
 }
 
 /* コントローラーのボタン部分 */
-a.btn {
+#top a.btn {
   margin-left:auto;
   margin-right:auto;
   width: 20px;
@@ -854,7 +850,7 @@ a.btn {
 外側から2番目のdiv 
 選択項目の1つ分だけ表示さえる
 */
-#value_inner {
+#top #value_inner {
   max-width: 100%;
   height: 20px;
 }
@@ -862,7 +858,7 @@ a.btn {
 /*
 選択項目格納場所
 */
-ul#wrapp {
+#top ul#wrapp {
   background-color: #c5c5c5;
   max-width: 100%;
   margin-left: auto;
@@ -876,6 +872,6 @@ ul#wrapp {
 }
 
 /* li各項目のスタイル */
-.value {
+#top .value {
   height: 20px;
 }

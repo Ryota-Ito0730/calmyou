@@ -6,6 +6,7 @@ $(function () {
   let html = $('html');
   let body = $('body');
   let topButtonArrow = $('button#top_menu, button#top_reverse, p.vertical, div.arrow_down, div.arrow_diagonal');
+  let top_buttons = $('button#top_menu, button#top_reverse');
   // ↑ common variable
 
   // =========================================================
@@ -97,11 +98,10 @@ $(function () {
 
     $(window).on('load', function () {
       // ローディング完了後、下記クラスを追加
-      // ★削除要検討
       $('#top_loading').addClass('first_loaded');
-
     });
   } else {
+    top_buttons.removeClass('d_non');
     let p = $('div.site_title p');
     $('#top header div.site_title').addClass('on');
     $('#top header .hkv_filter').addClass('on');
@@ -144,7 +144,6 @@ $(function () {
   let first_ww = $(window).width();
   let sec_themes = $('section#themes');
   let some_el = $('#sp_menu li a, footer li a');
-  let top_buttons = $('button#top_menu, button#top_reverse');
   let themes = $('.theme');
   let inner = 'inner';
   let hover = 'hover';

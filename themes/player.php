@@ -164,7 +164,7 @@
         <button class="plLeft_btn_3" ontouchstart="">
           <img  src="../common/img/el_parts/pl_left.svg" alt="">
         </button>
-        <button class="contact_btn" onclick="location.href='../contact/form.php'">
+        <button class="contact_btn" onclick="window.open('../contact/','_blank','noopener noreferrer')">
           <span class="icon-contact_icon_master"></span>
         </button>
       </div>    
