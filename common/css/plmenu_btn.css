@@ -1,0 +1,507 @@
+/* プレイヤーページのメニューボタン */
+button.pl_ctrl_btn span {
+  display: block;
+  width: 80%;
+  transition: .8s;
+  transform: translate3d(5px, 18px, 0);
+}
+
+button.pl_ctrl_btn.on span {
+  letter-spacing: -8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(5px, 18px, 0);
+}
+
+@keyframes pl_line_rotate_left {
+
+  0% {
+    transform-origin: center;
+    transform: translate3d(23px, -55px, 0) rotate(45deg);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: translate3d(23px, -55px, 0) rotate(405deg);
+  }
+
+}
+
+@keyframes pl_line_rotate_right {
+
+  0% {
+    transform-origin: center;
+    transform: translate3d(23px, -12px, 0) rotate(-45deg);
+  }
+
+  100% {
+    transform-origin: center;
+    transform: translate3d(23px, -12px, 0) rotate(315deg);
+  }
+
+}
+
+.pl_left_line {
+  background-color:#F2F2F2;
+  border-radius: 3px;
+  width: 3px;
+  height: 45px;
+  opacity: 0;
+  transition: .8s;
+  transform-origin: center;
+  animation: pl_line_rotate_left 60s linear infinite;
+}
+
+.pl_right_line {
+  background-color:#F2F2F2;
+  border-radius: 3px;
+  width: 3px;
+  height: 45px;
+  opacity: 0;
+  transition: .8s;
+  transform-origin: center;
+  animation: pl_line_rotate_right 60s linear infinite;
+}
+
+/* js_control:menu押下後の×マークの1本分を回転させる */
+.pl_left_line.on {
+  opacity: 1;
+  height: 45px;
+  margin-bottom: -45px;
+  animation: pl_line_rotate_left 60s linear infinite;
+}
+
+/* js_control:menu押下後の×マークの1本分を回転させる */
+.pl_right_line.on {
+  opacity: 1;
+  height: 45px;
+  margin-bottom: -2px;
+  animation: pl_line_rotate_right 60s linear infinite;
+}
+
+.pl_ctrl_1,
+.pl_ctrl_2,
+.pl_ctrl_3 {
+  max-width: 400px;
+  height: 100vh;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* プレイヤーコントロール画面内のボタンを絶対値固定する為設置 */
+  position: relative;
+  font-size: 50px;
+  color: #f3f3f3;
+
+  /* 初期値は画面外へ */
+  transform:translate3d(-100%,0, 0);
+  transition: .6s;
+
+  /* gridlayout */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.pl_ctrl_1 {
+  background-color: rgba(49,44,44,.5);
+  transform:translate3d(-100%,0, 0);
+}
+.pl_ctrl_2{
+  background-color: rgba(49,44,44,.5);
+  transform:translate3d(-100%,-100%, 0);
+}
+.pl_ctrl_3{
+  background-color: rgba(49,44,44,.5);
+  transform:translate3d(-100%,-200%, 0);
+}
+
+/* 高さ400px以上の処理 */
+@media screen and (min-height:400px) {
+  .pl_ctrl_1,
+  .pl_ctrl_2,
+  .pl_ctrl_3 {
+    height: 400px;
+  }
+
+  ul.pltm_wrapp, ul.flval_wrapp, ul.pltheme_wrapp {
+    top: 57%;
+  }
+
+}/* ===== end of @media screen and (min-width:600px) ===== */
+
+/* プレイヤーのmenuボタンのスタイル */
+.pl_ctrl_btn {
+  position: relative;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: #F2F2F2;
+  cursor: pointer;
+  background-color: #B8B3B6;
+  transform: translate3d(-100%, 64%, 0);
+  transition: transform .8s, opacity .8s;
+  overflow: hidden;
+}
+
+/* js_control:menuボタン押下後、透過しつつ画面外に移動する */
+.pl_ctrl_btn.btn_off {
+  transform: translate3d(-100%, 64%, 0);
+}
+
+.pl_ctrl_btn.btn_on {
+  opacity: 1;
+}
+
+/* プレイヤーページからtopページへ戻るボタン */
+.pl_top_btn,
+.contact_btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: #F2F2F2;
+  cursor: pointer;
+  background-color: #B8B3B6;
+  transition: transform .8s, opacity .8s;
+  align-self: center;
+  grid-column: 3 / 4;
+}
+.pl_top_btn {
+  overflow: hidden;
+  transform: translate3d(33px, -4px, 0);
+  grid-row: 1 / 2;
+}
+
+.contact_btn {
+  grid-row: 3 / 4;
+  transform: translate3d(33px, 10px, 0);
+}
+
+.contact_btn.contact_rotate {
+  animation: contact_rotate 1s ease-out forwards;
+}
+
+@keyframes contact_rotate {
+  0% {
+    transform: translate3d(33px, 10px, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(33px, 10px, 0) rotate(400deg);
+  }
+  60% {
+    transform: translate3d(33px, 10px, 0) rotate(400deg);
+  }
+  70% {
+    transform: translate3d(33px, 10px, 0) rotate(320deg);
+  }
+  80% {
+    transform: translate3d(33px, 10px, 0) rotate(380deg);
+  }
+  90% {
+    transform: translate3d(33px, 10px, 0) rotate(340deg);
+  }
+  100% {
+    transform: translate3d(33px, 10px, 0) rotate(360deg);
+  }
+}
+
+.pl_top_btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 3.2;
+}
+
+/* js_control:js側から付与専用クラス(画面内にmenuボタンを表示させる) */
+.tl_y {
+  transform: translate3d(50%, 64%, 0);
+}
+
+/* js_control:js側から付与専用クラス(menuボタン押下後に定位置に固定する) */
+.fixed_y {
+  transform: translate3d(50%, 64%, 0);
+}
+
+/* js_control:js側から付与専用クラス(×ボタン押下後に外側に移動させる) */
+.outside {
+  transform: translate3d(-100%, 0, 0);
+}
+
+/* プレイヤーメニュー内のクリアーボタン */
+button.fl_cl {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: #F2F2F2;
+  cursor: pointer;
+  background-color: #B8B3B6;
+  transition: transform .8s, opacity .8s;
+  grid-row: 2 / 3;
+  align-self: center;
+  justify-self: center;
+  line-height: 4;
+}
+
+/* ここからプレイヤーのメニュー画面内のボタン */
+button.tm_up,
+button.tm_down,
+button.slow,
+button.fast,
+button.fl_up,
+button.fl_dw {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 0;
+}
+
+button.tm_up,
+button.slow,
+button.fl_up {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  align-self: end;
+  transform: translate3d(0,60px,0);
+}
+
+button.tm_down,
+button.fast,
+button.fl_dw {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  align-self: start;
+}
+
+.plLeft_btn_1,
+.plLeft_btn_2,
+.plLeft_btn_3 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.plRight_btn_1,
+.plRight_btn_2 {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+/* js_control:メニュー背景を画面内に表示させる効果 */
+.pl_ctrl_1.on {
+  transform: translate3d(0, 0, 0);
+}
+
+.pl_ctrl_2.on {
+  transform: translate3d( 0, -100%, 0);
+}
+
+.pl_ctrl_3.on {
+  transform:translate3d( 0, -200%, 0);
+}
+
+.pl_ctrl_1 h4,
+.pl_ctrl_2 h4,
+.pl_ctrl_3 h4 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  text-align: center;
+  font-size: 3.2rem;
+  letter-spacing: 3px;
+  align-self: start;
+}
+
+/* ボタン要素ホバー時のスタイル */
+button.tm_up::before,
+button.slow::before,
+button.fl_up::before,
+button.fl_dw::before {
+  display: block;
+  font-size: 2rem;
+  color: #F2F2F2;
+  transform: translate3d(0, 20px, 0);
+  opacity: 0;
+  transition: .2s;
+}
+
+button.tm_down::after,
+button.fast::after,
+button.fl_dw::after {
+  display: block;
+  font-size: 2rem;
+  color: #F2F2F2;
+  transform: translate3d(0, 0, 0);
+  opacity: 0;
+  transition: .2s;
+}
+
+button.tm_up::before,
+button.fl_up::before {
+  content: 'Next';
+}
+
+button.contact_btn::before {
+  content: 'Contact';
+}
+
+button.tm_down::after,
+button.fl_dw::after {
+  content: 'Back';
+}
+
+button.tm_up:hover::before,
+button.fl_up:hover::before {
+  transform: translate3d(0, -20px, 0);
+  opacity: 1;
+}
+
+button.tm_down:hover::after,
+button.fl_dw:hover::after {
+  transform: translate3d(0, 20px, 0);
+  opacity: 1;
+}
+
+button.fast::after {
+  content: 'Fast';
+}
+
+button.slow::before {
+  content: 'Slow';
+}
+
+button.fast:hover::after {
+  transform: translate3d(0, 20px, 0);
+  opacity: 1;
+}
+
+button.slow:hover::before {
+  transform: translate3d(0, -20px, 0);
+  opacity: 1;
+}
+
+button.plLeft_btn_1::before,
+button.plRight_btn_1::before,
+button.plLeft_btn_2::before,
+button.plRight_btn_2::before,
+button.plLeft_btn_3::before {
+  display: block;
+  font-size: 2rem;
+  color: #F2F2F2;
+  transform: translate3d(0, 20px, 0);
+  opacity: 0;
+  transition: .2s;
+}
+
+button.contact_btn::before {
+  display: block;
+  font-size: 2rem;
+  color: #F2F2F2;
+  transform: translate3d(-10px, 0px, 0);
+  opacity: 0;
+  transition: .2s;
+}
+
+button.contact_btn:hover::before {
+  transform: translate3d(-10px, -45px, 0);
+  opacity: 1;
+ }
+
+button.plLeft_btn_1::before,
+button.plLeft_btn_2::before,
+button.plLeft_btn_3::before {
+  content: 'Back';
+}
+button.plRight_btn_1::before,
+button.plRight_btn_2::before {
+  content: 'Next';
+}
+
+button.plLeft_btn_1:hover::before,
+button.plRight_btn_1:hover::before,
+button.plLeft_btn_2:hover::before,
+button.plRight_btn_2:hover::before,
+button.plLeft_btn_3:hover::before {
+  transform: translate3d(0, -10px, 0);
+  opacity: 1;
+}
+
+/* ボタンイメージ直接のスタイル */
+button.tm_up img,
+button.tm_down img,
+button.slow img,
+button.fast img,
+button.fl_up img,
+button.fl_dw img 
+button.plRight_btn_1 img,
+button.plRight_btn_2 img,
+button.plLeft_btn_1 img,
+button.plLeft_btn_2 img,
+button.plLeft_btn_3 img {
+  transition: 0.1s;
+}
+
+button.tm_up:hover > img,
+button.tm_down:hover > img,
+button.slow:hover > img,
+button.fast:hover > img,
+button.fl_up:hover > img,
+button.fl_dw:hover > img,
+button.plRight_btn_1:hover > img,
+button.plRight_btn_2:hover > img,
+button.plLeft_btn_1:hover > img,
+button.plLeft_btn_2:hover > img,
+button.plLeft_btn_3:hover > img {
+  filter: drop-shadow(0px 0px 6px rgb(210, 210, 210));
+}
+
+button.tm_up img:active,
+button.tm_down img:active,
+button.slow img:active,
+button.fast img:active,
+button.fl_up img:active,
+button.fl_dw img:active,
+button.plRight_btn_1 img:active,
+button.plRight_btn_2 img:active,
+button.plLeft_btn_1 img:active,
+button.plLeft_btn_2 img:active,
+button.plLeft_btn_3 img:active {
+  filter: drop-shadow(0px 0px 25px rgb(210, 210, 210));
+}
+
+/* ↓ icon_fonts styles */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?om835p');
+  src:  url('../fonts/icomoon.eot?om835p#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?om835p') format('truetype'),
+    url('../fonts/icomoon.woff?om835p') format('woff'),
+    url('../fonts/icomoon.svg?om835p#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  display: block;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 2.2rem;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0px, -10px);
+}
+
+.icon-contact_icon_master:before {
+  content: "\e900";
+  color: rgb(221, 221, 221);
+}
+/* ↑ icon_fonts styles */

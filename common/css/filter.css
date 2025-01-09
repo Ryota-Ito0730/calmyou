@@ -1,0 +1,39 @@
+.fl_0 {
+  filter :none;  
+}
+.fl_1 {
+  filter: grayscale(30%);  
+}
+.fl_2 {
+  filter: grayscale(65%); 
+}
+.fl_3 {
+  filter: grayscale(100%);  
+}
+.fl_4 {
+  filter: sepia(40%); 
+}
+.fl_5 {
+  filter: sepia(65%);  
+}
+.fl_6 {
+  filter: sepia(100%); 
+}
+.fl_7 {
+  filter: saturate(25%);  
+}
+.fl_8 {
+  filter: saturate(45%); 
+}
+.fl_9 {
+  filter: saturate(70%);  
+}
+.fl_10 {
+  filter: brightness(80%) saturate(60%) sepia(30%);
+}
+.fl_11 {
+  filter: brightness(80%) saturate(60%) sepia(60%);
+}
+.fl_12 {
+  filter: brightness(80%) saturate(60%) sepia(90%);  
+}

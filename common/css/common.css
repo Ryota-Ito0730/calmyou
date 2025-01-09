@@ -1,0 +1,155 @@
+@charset "utf-8";
+
+/* リセットスタイルここから */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+/* リセットスタイルここまで */
+
+html {
+  font-size: 62.5%;
+  /* to hide scrollbar */
+  overflow-y: scroll;
+  -ms-overflow-style: none;    /* IE、Edge */
+  scrollbar-width: none;    /* Firefox */
+  
+  /* no select elements */
+  user-select: none;
+  -moz-user-select: none;/* Mozilla */
+  -webkit-user-select: none;/* WebKit */
+  -ms-user-select: none;/* Microsoft */
+}
+
+html::-webkit-scrollbar {
+  display: none;/* Chrome、Safari */
+}
+
+body {
+  font-size: 1.6rem;
+  font-family:メイリオ,Meiryo,sans-serif;
+  line-height: 2;
+  color: #7C7C7C;
+  background-color: rgba(227,227,217, 0.2);
+  list-style: none;
+}
+
+/* js control：ローディング後解除 */
+body.nocursor {
+  cursor: none;
+}
+
+a {
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  outline: none;
+  text-decoration: none;
+  color: rgb(221, 221, 221);
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* ローディングアニメーションここから */
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #0bd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+/* ローディングアニメーションここまで */
+
+.inner {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  margin-top: 80px;
+}
+
+.hover {
+  opacity: 1;
+}
+
+.hover:hover {
+  opacity: .8;
+}
+
+.smooth {
+  transition: .8s;
+}
+
+.d_non {
+  display: none;
+}
+
+.side {
+  padding-left: 2.8%;
+  padding-right: 2.8%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width:585px) {
+
+  .side {
+    padding-left:16.380px;
+    padding-right: 16.380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}/* ===== end of @media screen and (min-width: 585px) ===== */
+
+.btn {
+  width: 50px;
+  height: 50px;
+  background-color: #B8B3B6;
+  border-radius: 50%;
+  border: none;
+  color: #F2F2F2;
+  cursor: pointer;
+}
+
+.lead {
+  padding-top: 25px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hidden {
+  visibility: hidden;
+  transition: opacity .8s;
+  opacity: 0;
+}
+
+.visible {
+  visibility: visible;
+  transition: opacity .8s;
+  opacity: 1;
+}
