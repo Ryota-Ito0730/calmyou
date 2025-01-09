@@ -155,10 +155,15 @@ $message_error = isset($_SESSION['message_error']) ? $_SESSION['message_error'] 
         </p>
       </div>
       <p class="copy">
-        <small>&copy;2020Calmyou </small>
+        <<<<<<< HEAD
+          <small>&copy;2020Calmyou </small>
+          =======
+          <small>&copy;2020Calmyou </small>
+          >>>>>>> master
       </p>
     </div>
   </footer>
 </body>
+<<<<<<< HEAD=======>>>>>>> master
 
 </html>
